@@ -38,3 +38,8 @@ Change Sorting Method
     [Arguments]    ${sorting-method}
     select from list by value    //*[@id="header_container"]/div[2]/div[2]/span/select    ${sorting-method}
     element text should be    //*[@id="item_5_title_link"]/div    Sauce Labs Fleece Jacket
+
+Click About Option
+    click link    id:about_sidebar_link
+    location should be    https://saucelabs.com/
+    element text should be    class:is-1    Pass or fail. The world relies on your code.

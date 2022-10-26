@@ -27,3 +27,9 @@ Change Sorting Method
     Login    ${standard_user}    ${password}
     Change Sorting Method    ${sort_hilo}
 
+Open About
+    [Setup]    Open browser and Maximize    ${url}    ${browser}
+    [Teardown]    close browser
+    Login    ${standard_user}    ${password}
+    Open Sidebar
+    Click About Option
