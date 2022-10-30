@@ -1,5 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
+Variables    ../resources/variables.py
 
 *** Keywords ***
 Teardown
@@ -43,3 +44,19 @@ Click About Option
     click link    id:about_sidebar_link
     location should be    https://saucelabs.com/
     element text should be    class:is-1    Pass or fail. The world relies on your code.
+
+Open shopping cart
+    click link    class:shopping_cart_link
+    page should contain element    id:checkout
+    page should contain element    id:continue-shopping
+
+Add backpack to cart
+    wait until element is visible    id:add-to-cart-sauce-labs-backpack
+    click button    id:add-to-cart-sauce-labs-backpack
+    element text should be    class:shopping_cart_badge    1
+
+Check that shopping cart contains product
+    [Arguments]    ${product_name}
+    element text should be    class:inventory_item_name    ${product_name}
+
+

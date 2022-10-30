@@ -33,3 +33,18 @@ Open About
     Login    ${standard_user}    ${password}
     Open Sidebar
     Click About Option
+
+Open Empty Cart
+    [Setup]    Open browser and Maximize    ${url}    ${browser}
+    [Teardown]    close browser
+    Login    ${standard_user}    ${password}
+    Open shopping cart
+
+Add Product To Cart
+    [Setup]    Open browser and Maximize    ${url}    ${browser}
+    [Teardown]    close browser
+    Login    ${standard_user}    ${password}
+    Add backpack to cart
+    Open shopping cart
+    Check that shopping cart contains product    ${sauce_labs_backpack}
+

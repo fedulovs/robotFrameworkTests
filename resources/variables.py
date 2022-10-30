@@ -15,3 +15,6 @@ sort_az = 'az'
 sort_za = 'za'
 sort_lohi = 'lohi'
 sort_hilo = 'hilo'
+
+# Products
+sauce_labs_backpack = 'Sauce Labs Backpack'
