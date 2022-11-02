@@ -12,6 +12,8 @@
 8. Remove product from cart
 9. Checkout with product
 
+![run screenshot](./screenshots/run_screenshot.png)
+
 ### How to launch 
 1. Clone the project
 2. Install robot framework
