@@ -48,3 +48,23 @@ Add Product To Cart
     Open shopping cart
     Check that shopping cart contains product    ${sauce_labs_backpack}
 
+Delete Product From Cart
+    [Setup]    Open browser and Maximize    ${url}    ${browser}
+    [Teardown]    close browser
+    Login    ${standard_user}    ${password}
+    Add backpack to cart
+    Open shopping cart
+    Check that shopping cart contains product    ${sauce_labs_backpack}
+    Delete product
+
+Checkout
+    [Setup]    Open browser and Maximize    ${url}    ${browser}
+    [Teardown]    close browser
+    Login    ${standard_user}    ${password}
+    Add backpack to cart
+    Open shopping cart
+    Check that shopping cart contains product    ${sauce_labs_backpack}
+    Click Checkout Button
+    Fill Checkout Info    ${user_first_name}    ${user_last_name}    ${user_postal_code}
+    Complete checkout
+

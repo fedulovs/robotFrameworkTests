@@ -59,4 +59,29 @@ Check that shopping cart contains product
     [Arguments]    ${product_name}
     element text should be    class:inventory_item_name    ${product_name}
 
+Delete product
+    click button    id:remove-sauce-labs-backpack
+    element should not be visible    class:inventory_item_name
+
+Click Checkout Button
+    click button    id:checkout
+    element text should be    class:title    CHECKOUT: YOUR INFORMATION
+
+Fill Checkout Info
+    [Arguments]    ${first_name}    ${last_name}     ${postal_code}
+    input text    id:first-name   ${first_name}
+    input text    id:last-name   ${last_name}
+    input text    id:postal-code    ${postal_code}
+    click button    name:continue
+    element text should be   class:title    CHECKOUT: OVERVIEW
+
+Complete checkout
+    click button    id:finish
+    element text should be    class:title    CHECKOUT: COMPLETE!
+    element text should be    class:complete-header    THANK YOU FOR YOUR ORDER
+
+
+
+
+
 
